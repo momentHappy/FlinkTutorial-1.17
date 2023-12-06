@@ -1,4 +1,4 @@
-package org.atguigu.wc;
+package com.atguigu.wc;
 
 import org.apache.flink.api.common.typeinfo.Types;
 import org.apache.flink.api.java.tuple.Tuple2;

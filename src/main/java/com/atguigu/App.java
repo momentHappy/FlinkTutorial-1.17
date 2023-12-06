@@ -1,4 +1,4 @@
-package org.atguigu;
+package com.atguigu;
 
 /**
  * Hello world!

@@ -1,4 +1,4 @@
-package org.atguigu.wc;
+package com.atguigu.wc;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.functions.KeySelector;
