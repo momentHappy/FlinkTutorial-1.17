@@ -31,7 +31,7 @@ public class StateTTLDemo {
 
 
         SingleOutputStreamOperator<WaterSensor> sensorDS = env
-                .socketTextStream("hadoop102", 7777)
+                .socketTextStream("localhost", 9000)
                 .map(new WaterSensorMapFunction())
                 .assignTimestampsAndWatermarks(
                         WatermarkStrategy
@@ -39,7 +39,7 @@ public class StateTTLDemo {
                                 .withTimestampAssigner((element, ts) -> element.getTs() * 1000L)
                 );
 
-        sensorDS.keyBy(r -> r.getId())
+        sensorDS.keyBy(WaterSensor::getId)
                 .process(
                         new KeyedProcessFunction<String, WaterSensor, String>() {
 
